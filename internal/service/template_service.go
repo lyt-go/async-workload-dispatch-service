@@ -23,7 +23,7 @@ func (s *TemplateService) StepCount(name string) (int, error) {
 		return 0, errors.New("template not found")
 	}
 	if !definition.Ready {
-		return len(definition.Steps), nil
+		return 0, errors.New("template not ready")
 	}
 	return len(definition.Steps), nil
 }
